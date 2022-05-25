@@ -1,0 +1,15 @@
+:root {
+    --red-strong: #7F0E06;
+    --dark-red: #6A0F1E;
+    --orange: #CE420F;
+    --white: #fff;
+    --yellow1: #EDA849;
+    --yellow2: #FFD272;
+  }
+  * { 
+    margin: 0px;
+    padding: 0px;
+}
+.body{
+    background-color: #FFD272;
+}
