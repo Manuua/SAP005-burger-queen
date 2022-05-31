@@ -11,6 +11,7 @@
  font-size: 16px;
  text-align: center;
  max-width: 600px;
+ 
  justify-content: center;
  margin-left: auto;
  margin-right: auto;
@@ -20,29 +21,10 @@
  
 }
 
-input{
-    width: 100%;
-    height: 20%;
-    border: 1px solid black;
-   
-   
-}
-.nameValidation{
-
+.input{
+width: 30%; 
 }
 
-.emailValidation{
-
-}
-.cityValidation{
-
-}
-.senhaValidation{
-
-}
-.senhaValidation2{
-
-}
 
 .buttonValidation{
 width: 50%;
@@ -58,5 +40,5 @@ max-width: 250px;
 cursor: pointer;
 font-size: 16px;
 transition: filter 0.2s;
-    
+
 }

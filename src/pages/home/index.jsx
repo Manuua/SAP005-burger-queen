@@ -9,7 +9,7 @@ export function Home(){
 
 <div className='container'> 
 <img className="logo" src={logo} alt="logo"/>
-  <h1> Sing In</h1>
+  <h1> Entrar </h1>
 
 <div className='email'>
     <label for="email">E-mail</label>
@@ -17,7 +17,7 @@ export function Home(){
 </div>
 
 <div className='password'>
-    <label for="password">Password (8 characters minimum):</label>
+    <label for="password">senha (8 caractéres minimo):</label>
     <input className='input-password'type="password" id="pass" name="password"  minlength="8" required />
 </div>
  
