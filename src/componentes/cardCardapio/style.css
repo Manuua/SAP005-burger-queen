@@ -1,0 +1,20 @@
+
+.cardCardapio{
+    width: 40%;
+    margin-left: 30%; 
+
+    background: #CE420F;
+    color: #fff;
+
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+}
+
+.cardCArdapio strong{
+    font-size: 18px;
+}

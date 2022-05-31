@@ -1,5 +1,6 @@
-
-  const cardapio =[
+import React, {useState, useEffect} from 'react'
+ 
+ export const cardapioItens =[
     {category:'bedida', name: 'Refrigerante 600ml', price:9},
     {category:'bedida', name: 'Refrigerante Lata', price:8},
     {category:'bedida', name: 'Refrigerante 2l', price:15},

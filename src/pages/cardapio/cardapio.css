@@ -1,0 +1,12 @@
+.tituloCardapio{
+display: flex;
+flex-direction: column;   
+align-items: center;
+margin: 0;
+}
+
+.tituloCardapio img {
+width: 40%;
+max-width: 500px;
+
+}

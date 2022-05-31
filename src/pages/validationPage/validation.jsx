@@ -6,8 +6,6 @@ import logo from "../../imagens/logo.png";
 
  export function Validation(){
 
- 
-
      return (
          <div className='validationContainer'> 
     
