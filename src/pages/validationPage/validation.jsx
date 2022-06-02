@@ -7,39 +7,32 @@ import logo from "../../imagens/logo.png";
  export function Validation(){
 
      return (
-         <div className='validationContainer'> 
+    <div className='validationContainer'>     
     
         <img className="logo" src={logo} alt="logo"/>
-        <h1>Cadastre-se </h1>
-    <div className='input'> 
-        <div className='NameValidation'> 
-           <label for="name">Nome Completo</label>
-            <input type="text"/>
-        </div>
-    
-        <div className='emailValidation'>
-            <label for="email">email </label>
-            <input type="email"/>
-        </div>
-        <div className='cityValidation'>
-            <label for="cidade"> Cidade </label>
-            <input type="text"/>
-        </div>
-        <div className='senhaValidation'>
-            <label for="senha"> Senha </label>
-            <input type="password"/>
-        </div>
-     
-        <div className='senhaValidation2'>
-            <label for="senha"> Repetir Senha</label>
-            <input type="password"/>
-        </div>
-    </div>
+        <div className='container'>
+         
+         <h1> Cadastre-se </h1>
 
-        <button className='buttonValidation'> Cadastrar </button>
-        
+    <form action="">
+        <div class="input-field">
+            <input type="text" name="email" id="username" placeholder="Enter Your Email"/>
+            <div class="underline"/>
+        <div class="input-field"/>
+            <input type="password" name="password" id="password" placeholder="Enter Your Password"/>
+            <div class="underline"/>
+        <div class="input-field"/>
+            <input type="password" name="password" id="password" placeholder="Confirm Your Password"/>
+            <div class="underline"/>
+        <div class="input-field"/>
+            <input type="textarea" name="city" id="city" placeholder="Enter your City"/>
+            <div class="underline"/>
+        </div>   
+            <input type="submit" value="Continue"/>
+           
+    </form>   
         </div> 
-        
+    </div> 
         
      )
  }

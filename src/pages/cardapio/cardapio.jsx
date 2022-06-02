@@ -1,19 +1,26 @@
 import React, {useState, useEffect} from 'react'
 import'./cardapio.css';
 import '../../styles/global.css'
-import '../dados'
+import '../../componentes/dadosCardapio/dados'
 import { CardCardapio } from '../../componentes/cardCardapio';
-import titulocardapio from "../../imagens/titulocardapio.png"
-import { cardapioItens } from '../dados';
+import titulocardapio from "../../imagens/titulocardapio.png";
+import { cardapioItens } from '../../componentes/dadosCardapio/dados';
+import { render } from 'react-dom';
 
-export function Cardapio() {
- 
+export function Cardapio(){
+  const itens = cardapioItens;
+  const cardapioFinal = itens.map(n => <CardCardapio
+  key={itens.id} 
+  name={itens.name}
+  price={itens.price}
+  />  )
+
     return(
+   
   <>
+  
   <div className="tituloCardapio" > <img  src={titulocardapio} alt="titulo do cardápio"/> </div>
-  <div>
-  <CardCardapio  />
-  </div>
+  <div> {cardapioFinal}</div>
    
   </>
     )

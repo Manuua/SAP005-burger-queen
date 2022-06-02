@@ -12,45 +12,33 @@ function initialState(){
 
 export function Home(){
 
-    const UserLogin = () => {
-        const [values, setValues]= useState(initialState);
-    
 
-    function onChange(event){
-        const {value, name} = event.target;
-
-      setValues({
-          ...values,
-          [name]:value,
-      });
-    }
 
     return (
-
-<div className='container'> 
+<div className='containerPrincipal'>
 <img className="logo" src={logo} alt="logo"/>
-  <h1> Entrar </h1>
 
-<div className='email'>
-    <label for="email">E-mail</label>
-    <input  className ="input-email" type="email" onblur="validacaoEmail(f1.email)" name="user" onChange={onChange} value={values.user} />
-</div>
-
-<div className='password'>
-    <label for="password">senha (8 caractéres minimo):</label>
-    <input className='input-password'type="password" id="pass" name="password"  onChange={onChange} value={values.password} />
-</div>
+    <div className='container'>
  
-    <button  className='button-enter' type='submit' id='validate'>Entrar</button>
- 
-<div>
-    <a href="#"> Novo por aqui ? Faça Seu cadastro</a>
-</div>
+<h2> Login </h2>
+ <form action="">
+    <div class="input-field"/>
+        <input type="text" name="username" id="username" placeholder="Enter Your Username"/>
+    <div class="underline"></div>
+            
+    <div class="input-field">
+        <input type="password" name="password" id="password"  placeholder="Enter Your Password"/>
+        <div class="underline"></div>
+    </div>
+     <input type="submit" value="Continue"/>
+        </form>
+    </div>
+            
+                    
+               
+            
+        
+    </div>
 
-<footer >  
-    <p>Desenvolvido por Manoela Araújo</p>
-</footer>
-</div>
     )
   }
-}

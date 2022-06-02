@@ -9,9 +9,12 @@ export function Menu() {
 <>
   
 <div className='container-menu'> 
+
     <nav>
-    <label className="logo-nav-bar">  <img className="logo" src={logo} alt="logo"/>  </label>
+
+    <label className="logo-nav-bar">  <img className="logoMenu" src={logo} alt="logo"/>  </label>
         <ul>
+       
             <li><a  className='link-Menu' href="#">Início </a></li>
             <li><a href="#">Cardápio </a></li>
             <li><a href="#">Pedidos</a></li>
