@@ -17,13 +17,10 @@ import logo from "../../imagens/logo.png";
     <form action="">
         <div class="input-field">
             <input type="text" name="email" id="username" placeholder="Enter Your Email"/>
-            <div class="underline"/>
         <div class="input-field"/>
             <input type="password" name="password" id="password" placeholder="Enter Your Password"/>
-            <div class="underline"/>
         <div class="input-field"/>
             <input type="password" name="password" id="password" placeholder="Confirm Your Password"/>
-            <div class="underline"/>
         <div class="input-field"/>
             <input type="textarea" name="city" id="city" placeholder="Enter your City"/>
             <div class="underline"/>

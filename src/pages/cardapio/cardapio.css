@@ -1,12 +1,33 @@
-.tituloCardapio{
-display: flex;
-flex-direction: column;   
-align-items: center;
-margin: 0;
+.containerCardapio{
+    flex-direction: row; 
+    display: flex; 
+    
+}
+.tituloCardapio img {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 30em;
+ width: 30em;
+ padding:5px;
+ margin: 3%;
+ margin-top: auto;
+ margin-left: auto;
+ margin-right: auto;
+ flex-direction: row;
 }
 
-.tituloCardapio img {
-width: 40%;
-max-width: 500px;
-
+.renderItens{
+ width: 38%;
+   
+}
+.carrinho{
+height: 30em;
+width: 38%;
+float: right;
+background-color:#CE420F ;
+padding: 2rem;
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+border-radius: 8px;   
+align-items: center;   
 }
