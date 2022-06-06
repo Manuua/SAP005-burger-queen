@@ -17,7 +17,7 @@ export function Menu() {
        
             <li><a  className='link-Menu' href="#">Início </a></li>
             <li><a href="#">Cardápio </a></li>
-            <li><a href="#">Pedidos</a></li>
+            <li><a href="#">Pedidos Prontos </a></li>
             <li><a href="#">Sair </a></li>
         </ul>
     </nav>

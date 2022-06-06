@@ -15,10 +15,21 @@ export function Cardapio(){
   const onAdd = cartItem => {
   const count = cart[cartItem.name]?.count ? cart[cartItem.name]?.count +1 : 1;
   setCart({...cart,[cartItem.name] : {count, price : cartItem.price} } ) 
+  // setCart("banana")
+  // frutas = "uva"
  }
 
-
-
+  const onRemove = cartItem => {
+    const remove = cart[cartItem.name]?.remove ? cart[cartItem.Name]?.remove -1 : [cartItem.Name] ;
+    setCart({...cart,[cartItem.name] : {remove, price : cartItem.price} } )
+  }
+ 
+ //const [value,setTotalValue]=useState[cartItem.price]
+  // const total = cartItem => {
+  //   let value = cart[cartItem.price]?.total ? cart[cartItem.price]
+  //   value = value + cartItem.price
+  //   setTotalValue(value)
+  // }
   const [menu,setMenu]= useState(dados);
 
   const menuElements = menu.map((Item) => (
@@ -27,19 +38,34 @@ export function Cardapio(){
     name={Item.name}
     price={Item.price} 
     onAdd = {onAdd}
+    onRemove={onRemove}
     />
   ));
+
+  localStorage.setCart("key","value")
+
+ 
 
   return (
   <>
   <div className="tituloCardapio"> 
     <img  src={titulocardapio} alt="titulo do cardápio"/>
-  </div>
-  <div className='containerCardapio'>
+    </div>
+      <div className='containerCardapio'>
           <div className='carrinho'>
             <h1> Pedido </h1>
             
-            <input type="submit" value="Continue"/>
+            {Object.keys(cart).map(itemCart => { 
+              const item = itemCart 
+              return (
+                <>
+                  <p className='namePedido'> {itemCart} Qt : {cart[item].count}<span className='pricePedido'> R${cart[item].price},00</span></p>
+                 <h4>Total</h4>
+                </>
+              )
+            }) }
+        
+            <input className="buttonCardapio"type="submit" value="Enviar "/>
           </div>
            <div className='renderItens'> 
                {" "}

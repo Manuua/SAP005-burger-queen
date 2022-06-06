@@ -5,7 +5,6 @@
 
 .logo-nav-bar{
     width: 30%;
-    
     float: left;
 }
 
@@ -19,12 +18,12 @@ nav{
 }
 .logoMenu{
     display: flex;
-    justify-content: center;
     align-items: center;
     height: 15em;
     width: 15em;
     padding:5px;
     margin: 3%;
+    float: left;
 }
 
 nav ul  {

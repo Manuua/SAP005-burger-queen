@@ -13,6 +13,7 @@ export function CardCardapio(props){
 
     <div class="input-group">
         <input type="button" value="+" class="button-plus" data-field="quantity" onClick={() => props.onAdd({name: props.name, price: props.price})} />
+        <input type="button" value="-" class="button-minus" data-field="quantity" onClick={()=> props.onRemove({name: props.name, price: props.price})}></input>
     </div>
 </div>
      
