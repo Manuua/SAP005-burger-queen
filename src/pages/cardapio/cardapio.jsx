@@ -9,9 +9,11 @@ import dados from '../../componentes/dadosCardapio/dados';
 
 
 
-export function Cardapio(){
-  const [cart, setCart] = useState({})
 
+export function Cardapio(){
+
+  const [cart, setCart] = useState({})
+  const [submited, setSubmited]= useState (false)
   const onAdd = cartItem => {
   const count = cart[cartItem.name]?.count ? cart[cartItem.name]?.count +1 : 1;
   setCart({...cart,[cartItem.name] : {count, price : cartItem.price} } ) 
@@ -19,17 +21,28 @@ export function Cardapio(){
   // frutas = "uva"
  }
 
-  const onRemove = cartItem => {
-    const remove = cart[cartItem.name]?.remove ? cart[cartItem.Name]?.remove -1 : [cartItem.Name] ;
-    setCart({...cart,[cartItem.name] : {remove, price : cartItem.price} } )
-  }
+ const onRemove = cartItem => {
+  const remove = cart[cartItem.name]?.remove ? cart[cartItem.Name]?.remove -1 : {} ;
+  setCart({[cartItem.name]: {remove, price : cartItem.price } } )
+}
+
  
- //const [value,setTotalValue]=useState[cartItem.price]
-  // const total = cartItem => {
-  //   let value = cart[cartItem.price]?.total ? cart[cartItem.price]
-  //   value = value + cartItem.price
-  //   setTotalValue(value)
-  // }
+
+//  function handleAddCard(){
+//   const newCart = {
+//     name:cart,//nome do estado
+//     time:new Date().toLocaleTimeString("pt-br", {
+//       hour:'2-digit',
+//       minute:'2-digit',
+//       second:'2-digit',
+//     })
+//   }
+//   setCart(estadoAnterior=> [...estadoAnterior,newCart]);
+//       //['manoela']
+//       //[manoela, araujo]
+//   }
+  
+
   const [menu,setMenu]= useState(dados);
 
   const menuElements = menu.map((Item) => (
@@ -39,12 +52,30 @@ export function Cardapio(){
     price={Item.price} 
     onAdd = {onAdd}
     onRemove={onRemove}
+    
     />
   ));
 
-  localStorage.setCart("key","value")
+  // const saveOnLocalStorage = (e) => {
+  //   window.localStorage('price', e)
+  //  }
 
- 
+  const  saveOnLocalStorage = () => {
+    let pedido = JSON.parse(localStorage.getItem('pedido')) 
+
+    pedido = {
+      ...pedido,
+      [new Date().toLocaleTimeString("pt-br",{
+        hour:'2-digit',
+        minute:'2-digit',
+        second:'2-digit',
+      })]: cart
+    }
+
+    localStorage.setItem('pedido', JSON.stringify(pedido))
+    setCart({})
+    setSubmited(true)
+  }
 
   return (
   <>
@@ -65,7 +96,11 @@ export function Cardapio(){
               )
             }) }
         
-            <input className="buttonCardapio"type="submit" value="Enviar "/>
+            <input className="buttonCardapio"
+            type="submit"  
+            onClick={saveOnLocalStorage}
+            />
+        
           </div>
            <div className='renderItens'> 
                {" "}

@@ -32,6 +32,7 @@ export function Home(){
     </div>
      <input type="submit" value="Continue"/>
         </form>
+        <a> </a>
     </div>
             
                     
