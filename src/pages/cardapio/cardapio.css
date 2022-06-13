@@ -56,3 +56,8 @@ font-weight: bold;
     letter-spacing: 0.5px;
     background: linear-gradient(to right, var(--yellow2), var(--yellow1) );
 }
+.totalFinal{
+    color:rgba(224, 223, 156, 0.767) ;
+    text-align: center;
+    margin-top: 20px;
+}

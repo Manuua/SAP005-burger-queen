@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import'./menu.css';
 import '../../styles/global.css'
 import logo from "../../imagens/logo.png";
-//import { CardPedido } from '../cardPedido/cardPerdido';
+import { CardPedido } from '../cardPedido/cardPerdido';
+import { Cardapio } from '../../pages/cardapio/cardapio';
 
 export function Menu() {
 //     export function useLocalStorage(key , initialValue){
@@ -24,11 +25,14 @@ export function Menu() {
 //           }
 
 //        return[storedValue, setValue]
-
-
 // }
-    return (
-        
+
+function  pedidosCozinha() {
+ return JSON.parse(localStorage.getItem("pedido"))
+
+}
+
+  return(      
 <>
   
 <div className='container-menu'> 
@@ -44,8 +48,15 @@ export function Menu() {
             <li><a href="#">Sair </a></li>
         </ul>
     </nav>
+    <div> 
+    
+    <CardPedido 
+     
+    /> 
+  </div> 
     
 </div>
+
  </>
-    )
+  )  
 }
