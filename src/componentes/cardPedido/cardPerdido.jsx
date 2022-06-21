@@ -1,12 +1,9 @@
 import './cardPedido.css';
 import '../../styles/global.css'
 
-export function CardPedido(props){
-  const {cartItems, onAdd, onRemove}= props;
-  function  pedidosCozinha() {
-    return JSON.parse(localStorage.getItem("pedido"))
-   
-   }
+export function CardPedido({pedido}){
+ console.log(pedido)
+  
     return (
     <>
    
@@ -17,20 +14,22 @@ export function CardPedido(props){
           </>       
         
       {
-         Object.keys(JSON.parse(localStorage.getItem("pedido"))).map( pedido => {
+        Object.keys(pedido).map(itemPedido => {
+         
            return( 
              <>
              <div>
-             <p> {pedido.price}</p> 
-             <p> {pedido.time}</p> 
+              <p> {itemPedido}</p> 
+              <p> {(pedido[itemPedido].price)}</p> 
              </div>
              
-             <p> {JSON.stringify(JSON.parse(localStorage.getItem("pedido"))[pedido])} </p> 
            </>
            )
           
-         })    
+         
+        })   
      } 
+     
       </div>
     
         

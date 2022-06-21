@@ -62,16 +62,27 @@ export function Cardapio(props) {
   const saveOnLocalStorage = () => {
     let pedido = JSON.parse(localStorage.getItem("pedido"));
 
-    pedido = {
-      ...pedido,
-      [new Date().toLocaleTimeString("pt-br", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      })]: cart,
-    };
-
+ if (pedido) {
+    pedido = [...pedido, cart]
     localStorage.setItem("pedido", JSON.stringify(pedido));
+ } else {
+  const novoPedido = []
+  novoPedido.push(cart)
+  localStorage.setItem("pedido", JSON.stringify(novoPedido));
+ }
+
+
+    
+    // pedido = {
+    //   ...pedido,
+    //   [new Date().toLocaleTimeString("pt-br", {
+    //     hour: "2-digit",
+    //     minute: "2-digit",
+    //     second: "2-digit",
+    //   })]: cart,
+    // };
+
+    //localStorage.setItem("pedido", JSON.stringify(pedido));
     setCart({});
     setSubmited(true);
   };

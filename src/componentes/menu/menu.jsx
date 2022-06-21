@@ -27,10 +27,10 @@ export function Menu() {
 //        return[storedValue, setValue]
 // }
 
-function  pedidosCozinha() {
- return JSON.parse(localStorage.getItem("pedido"))
+const pedidosCozinha = JSON.parse(localStorage.getItem("pedido"))
+const [pedidoFromLocalStorage, setPedido ]= useState(pedidosCozinha) 
 
-}
+
 
   return(      
 <>
@@ -49,10 +49,17 @@ function  pedidosCozinha() {
         </ul>
     </nav>
     <div> 
-    
-    <CardPedido 
+    {
+      pedidoFromLocalStorage.map((pedido, index) => ( 
+         <CardPedido
+         pedido={pedido}
+         key={index}
+         /> 
+      ))
      
-    /> 
+    }
+    
+   
   </div> 
     
 </div>

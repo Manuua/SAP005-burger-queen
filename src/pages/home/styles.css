@@ -112,3 +112,6 @@ form input[type="submit"]:hover {
     letter-spacing: 0.5px;
     background: linear-gradient(to right, var(--orange), var(--yellow1));
 }
+.Login-Error {
+    color: #ff8080;
+}
