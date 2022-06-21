@@ -7,7 +7,7 @@ import logo from "../../imagens/logo.png";
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
-
+import { history } from '../../history'
 
 
 export function Home(){
@@ -16,14 +16,13 @@ export function Home(){
   
     const handleSubmit = values => {
         axios.post('http://localhost:8080/v1/api/auth', values)
-        .then(resp => console.log(resp))
-            // .then(resp => {
-            //     const { data } = resp
-            //     if (data) {
-            //         localStorage.setItem('app-token', data)
-            //         history.push('/')
-            //     }
-            // })
+            .then(resp => {
+                const { data } = resp
+                if (data) {
+                    localStorage.setItem('app-token', data)
+                    history.push('/Menu')
+                }
+            })
     }
 
     const validations = yup.object().shape({

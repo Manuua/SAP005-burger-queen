@@ -47,6 +47,7 @@ import {Home} from "./pages/home/index"
 import { Validation } from "./pages/validationPage/validation";
 import {Cardapio} from "./pages/cardapio/cardapio";
 import { Menu } from "./componentes/menu/menu";
+//import {PrivateRoute} from './componentes/Routes/private'
 //import  StoreProvider  from "./componentes/Validation/provider";
 
 

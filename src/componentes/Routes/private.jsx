@@ -1,19 +1,12 @@
-import React from "react";
-// import React, {useContext} from "react";
-// import { Component } from "react";
-// import {Route , Redirect } from 'react-router-dom'
-// import StoreContext from "../Validation/context";
- 
-// const RoutesPrivate = ({componente: Component, ...rest}) => {
-//     const {token} = useContext(StoreContext)
-// return (
-//     <Route 
-//     {...rest}
-//     render = {()=> token 
-//      ? <Component {...rest} />
-//      : <Redirect to="/Validation" />
-//       }
-//      />
-//   ) 
+// import React from "react";
+
+
+// import { Route, Redirect } from 'react-router'
+// //import { useNavigate } from 'react-router-dom';
+
+// const PrivateRoute = props => {
+//     const isLogged = !!localStorage.getItem('app-token')
+//     return isLogged ? <Route {...props}/> : <Redirect to="/Validation"/>
 // }
-// export default RoutesPrivate;
+
+// export default PrivateRoute
