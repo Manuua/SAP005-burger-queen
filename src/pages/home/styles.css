@@ -118,6 +118,7 @@ form input[type="submit"]:hover {
 .question{
     margin: 0 auto;
     display: flex;
+    cursor: pointer;
 }
 .question-validation{
    color: var(--orange);

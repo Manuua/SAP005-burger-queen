@@ -1,20 +1,16 @@
 import React from 'react'
-
 import'./styles.css';
 import '../../styles/global.css'
 import logo from "../../imagens/logo.png";
-
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
-import { history } from '../../history'
+import { useNavigate } from 'react-router-dom';
 //import {PrivateRoute} from '../../componentes/Routes/private'
 
 
 export function Home(){
-
-    //const [value, setValue] = useState("");  
-  
+// validation API 
     const handleSubmit = values => {
         
         axios.post('http://localhost:8080/v1/api/auth', values)
@@ -22,7 +18,7 @@ export function Home(){
                 const { data } = resp
                 if (data) {
                     localStorage.setItem('app-token', data)
-                    history.push('/menu')
+                    navigate('/menu')
                 }
             })
     }
@@ -32,21 +28,11 @@ export function Home(){
         password: yup.string().min(8).required()
     })
 
-    // const{authenticated , login } = useContext(AuthContext)
-
-    // const[email, setEmail] = useState("");
-    // const [password, setPassword] = useState("")
-  
-  
-    
-  
-
-    // const [values, setValues] = useState(initialState)
-    // const { setToken } = useContext(StoreContext)
-    // //const history = useHistory();
-
-
-    
+// Routes 
+let navigate = useNavigate()
+    function handleValidation(){
+        navigate("/validation")
+    }
 
     return (
 <div className='containerPrincipal'>
@@ -93,15 +79,13 @@ export function Home(){
 
      <div class="underline"></div>
     </div>
-     <input type="submit" 
-    
-      /> 
+     <input type="submit" /> 
      
     </Form>
    
     </Formik>
     <div className='question'> 
-    <a href='/validation' className='question-validation'> Não tem conta ? Cadrastre-se </a>  
+    <a className='question-validation' onClick={handleValidation}> Não tem conta ? Cadrastre-se </a>  
     </div>
     </div>     
         

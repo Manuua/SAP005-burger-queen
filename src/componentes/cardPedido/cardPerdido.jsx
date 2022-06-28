@@ -2,8 +2,10 @@ import './cardPedido.css';
 import '../../styles/global.css'
 
 export function CardPedido({pedido}){
- console.log(pedido)
-  
+ 
+  function cleanLocalStorage() {
+   localStorage.removeItem(key)
+  }
     return (
     <>
    
@@ -29,7 +31,7 @@ export function CardPedido({pedido}){
      } 
        <input className="buttonCardapio"
             type="submit"
-            
+            onClick={cleanLocalStorage}
          /> 
       </div>
     

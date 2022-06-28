@@ -3,25 +3,20 @@ import'./validation.css';
 import '../../styles/global.css';
 import logo from "../../imagens/logo.png";
 import { ErrorMessage, Formik, Form, Field } from 'formik'
-
-
-
-// import axios from 'axios'
-// import { history } from '../../history'
-
+import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup'
 import axios from 'axios'
 
 
  export function Validation() {
-
+// Send Data from API 
     const handleSubmit = values => {
         axios.post('http://localhost:8080/v1/api/user', values)
             .then(resp => {
                 const { data } = resp
                 console.log(data)
                 if (data) {
-                    history.push('/menu')
+                    navigate('/menu')
                 }
             })
     }
@@ -34,14 +29,16 @@ import axios from 'axios'
         password: yup.string().min(8).required()
     })
 
+// Routes 
+let navigate = useNavigate()
+function handleHome(){
+    navigate("/")
+}
      return (
-        
-         
-    <div className='validationContainer'>     
-    
-        <img className="logo" src={logo} alt="logo"/>
-        <div className='container'>
-         
+             
+ <div className='validationContainer'>     
+     <img className="logo" src={logo} alt="logo"/>
+      <div className='container'>
          <h1> Cadastre-se </h1>
  <Formik
      initialValues={{}}
@@ -83,12 +80,12 @@ import axios from 'axios'
         <div class="underline"/>
     </div>   
             
-        <input type="submit" value="Continue"/>
+        <input type="submit" value="Submit"/>
              
             </Form>   
           </Formik>
           <div className='question-Validation'> 
-              <a href='/' className='question'> Já tem conta ? Entre Aqui </a>
+              <a  className='question' onClick={handleHome}> Já tem conta ? Entre Aqui </a>
           </div>
         </div> 
     </div> 
