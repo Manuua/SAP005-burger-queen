@@ -98,8 +98,11 @@ export function Home(){
       /> 
      
     </Form>
+   
     </Formik>
-       
+    <div className='question'> 
+    <a href='/validation' className='question-validation'> Não tem conta ? Cadrastre-se </a>  
+    </div>
     </div>     
         
     </div>

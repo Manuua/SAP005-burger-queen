@@ -1,49 +1,28 @@
-
-//import { NavLink } from "react-bootstrap";
-//import logo from "../../imagens/logo.png";
-//import React from 'react'
+import React from 'react'
 import'./Nav.css';
-import React, {useState, useEffect} from 'react'
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 export function Navbar() {
+  let navigate = useNavigate()
 
-    const [toggleMenu, setToggleMenu] = useState(false)
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-  
-  
-    const toggleNav = () => {
-      setToggleMenu(!toggleMenu)
-    }
-  
-    useEffect(() => {
-  
-      const changeWidth = () => {
-        setScreenWidth(window.innerWidth);
-      }
-  
-      window.addEventListener('resize', changeWidth)
-  
-      return () => {
-          window.removeEventListener('resize', changeWidth)
-      }
-  
-    }, [])
+  function handleCardapio() {
+    navigate("/cardapio"); //aqui você troca a rota
+  }
+  function handleMenu() {
+    navigate("/menu")
+  }
+  function handleExit() {
+    navigate("/")
+  }
 
     return (
-      <nav>
-      {(toggleMenu || screenWidth > 500) && (
-      <ul className="list">
-      <li className="items">Inicio</li>
-      <li className="items">Cardapio</li>
-      <li className="items">Pedidos</li>
-      <li className="items">Sair</li>
-    </ul>
-      )}
-
-      <button onClick={toggleNav} className="btn">BTN</button>
-    </nav>
+  <nav className='nav-cardapio'>
+     <ul className="list">
+      <li className="items" onClick={handleMenu}> Inicio </li>
+      <li className="items" onClick={handleCardapio} >Cardapio </li>
+      <li className="items" onClick={handleMenu}> Pedidos </li>
+      <li className="items" onClick={handleExit}>Sair</li>
+    </ul>  
+  </nav>
     )
   }

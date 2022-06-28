@@ -115,3 +115,12 @@ form input[type="submit"]:hover {
 .Login-Error {
     color: #ff8080;
 }
+.question{
+    margin: 0 auto;
+    display: flex;
+}
+.question-validation{
+   color: var(--orange);
+   text-align: center;
+   margin: 0 auto;
+}

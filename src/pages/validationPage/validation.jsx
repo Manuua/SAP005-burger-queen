@@ -87,6 +87,9 @@ import axios from 'axios'
              
             </Form>   
           </Formik>
+          <div className='question-Validation'> 
+              <a href='/' className='question'> Já tem conta ? Entre Aqui </a>
+          </div>
         </div> 
     </div> 
         

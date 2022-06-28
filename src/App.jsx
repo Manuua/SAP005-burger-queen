@@ -41,12 +41,12 @@
 
 import * as React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-
-
 import {Home} from "./pages/home/index"
 import { Validation } from "./pages/validationPage/validation";
 import {Cardapio} from "./pages/cardapio/cardapio";
-import { Menu } from "./componentes/menu/menu";
+import { Menu } from "./pages/menu/menu";
+
+//import { createBrowserHistory } from "history"
 //import {PrivateRoute} from './componentes/Routes/private'
 //import  StoreProvider  from "./componentes/Validation/provider";
 
@@ -58,7 +58,7 @@ export const App= ()=> {
   return (
     <div className="App">
       <Routes> 
-        <Route  path="/" element={< Home/>} />
+        <Route  path="/" element={<Home />} />
         <Route  path="/validation" element={<Validation />} /> 
         <Route path="/cardapio" element={<Cardapio />} />
         <Route path="/menu" element={<Menu/>} />

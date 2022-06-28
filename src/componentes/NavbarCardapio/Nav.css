@@ -62,7 +62,7 @@ a.link-menu, a:hover {
   
 
 
-nav {
+.nav-cardapio {
     position: fixed;
     top: 0;
     width: 100%;
@@ -93,7 +93,7 @@ nav {
     right: 10px;
     top: 7px;
     padding: 5px;
-    color: #000;
+    color: rgb(230, 161, 72);
     font-size: 18px;
 }
 
