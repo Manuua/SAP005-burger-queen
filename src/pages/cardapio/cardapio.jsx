@@ -6,6 +6,8 @@ import { CardCardapio } from "../../componentes/cardCardapio/cardCardapio";
 import titulocardapio from "../../imagens/titulocardapio.png";
 import { render } from "react-dom";
 import dados from "../../componentes/dadosCardapio/dados";
+import { Navbar } from "../../componentes/NavbarCardapio/Navbar";
+import { BrowserRouter as Router } from "react-router-dom";
 //import { localStorage } from "../../componentes/localStorage/localStorage";
 
 export function Cardapio(props) {
@@ -71,27 +73,19 @@ export function Cardapio(props) {
   localStorage.setItem("pedido", JSON.stringify(novoPedido));
  }
 
-
-    
-    // pedido = {
-    //   ...pedido,
-    //   [new Date().toLocaleTimeString("pt-br", {
-    //     hour: "2-digit",
-    //     minute: "2-digit",
-    //     second: "2-digit",
-    //   })]: cart,
-    // };
-
-    //localStorage.setItem("pedido", JSON.stringify(pedido));
     setCart({});
     setSubmited(true);
   };
 
   return (
-    <>
-      <div className="tituloCardapio">
-        <img src={titulocardapio} alt="titulo do cardápio" />
-      </div>
+  <>
+
+<Navbar /> 
+
+  
+    <div className="tituloCardapio">
+      <img src={titulocardapio} alt="titulo do cardápio" />
+    </div>
       <div className="containerCardapio">
         <div className="carrinho">
           <h1> Pedido </h1>
@@ -115,6 +109,7 @@ export function Cardapio(props) {
             onClick={saveOnLocalStorage}
           />
         </div>
+       
         <div className="renderItens"> {menuElements}</div>
       </div>
     </>

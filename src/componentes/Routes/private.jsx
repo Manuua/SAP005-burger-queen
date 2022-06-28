@@ -1,12 +1,10 @@
-// import React from "react";
-
+// import React from 'react'
 
 // import { Route, Redirect } from 'react-router'
-// //import { useNavigate } from 'react-router-dom';
 
 // const PrivateRoute = props => {
 //     const isLogged = !!localStorage.getItem('app-token')
-//     return isLogged ? <Route {...props}/> : <Redirect to="/Validation"/>
+//     return isLogged ? <Route {...props}/> : <Redirect to="/menu"/>
 // }
 
 // export default PrivateRoute

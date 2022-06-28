@@ -3,7 +3,7 @@ import'./menu.css';
 import '../../styles/global.css'
 import logo from "../../imagens/logo.png";
 import { CardPedido } from '../cardPedido/cardPerdido';
-import { Cardapio } from '../../pages/cardapio/cardapio';
+//import {PrivateRoute} from '../Routes/private'
 
 export function Menu() {
 //     export function useLocalStorage(key , initialValue){
@@ -27,27 +27,33 @@ export function Menu() {
 //        return[storedValue, setValue]
 // }
 
+ //onClick() {redirect("/cardapio")}
+
+
 const pedidosCozinha = JSON.parse(localStorage.getItem("pedido"))
 const [pedidoFromLocalStorage, setPedido ]= useState(pedidosCozinha) 
-
 
 
   return(      
 <>
   
+{/* <div className='container-menu'>  */}
 <div className='container-menu'> 
 
-    <nav>
+    
 
     <label className="logo-nav-bar">  <img className="logoMenu" src={logo} alt="logo"/>  </label>
+      <div className='menu'> 
+        <nav className='menu-nav'>
         <ul>
        
-            <li><a  className='link-Menu' href="#">Início </a></li>
+            <li><a  className='link-Menu' href="#" >Início </a></li>
             <li><a href="#">Cardápio </a></li>
             <li><a href="#">Pedidos Prontos </a></li>
             <li><a href="#">Sair </a></li>
         </ul>
     </nav>
+    </div>
     <div> 
     {
       pedidoFromLocalStorage.map((pedido, index) => ( 

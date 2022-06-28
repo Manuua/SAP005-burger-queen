@@ -8,31 +8,32 @@ export function CardPedido({pedido}){
     <>
    
    <div className='carrinhoMenu'>
-        <h1> Pedido </h1>
-          <>
-            <p className='namePedido'><span> </span></p>
-          </>       
-        
+        <h1> Pedido </h1> 
+     
       {
         Object.keys(pedido).map(itemPedido => {
          
            return( 
              <>
              <div>
-              <p> {itemPedido}</p> 
-              <p> {(pedido[itemPedido].price)}</p> 
-             </div>
-             
+              <p>Item : {itemPedido}</p> 
+              <p>R$ {(pedido[itemPedido].price)}</p> 
+              </div>
+
+
            </>
            )
           
          
         })   
      } 
-     
+       <input className="buttonCardapio"
+            type="submit"
+            
+         /> 
       </div>
     
-        
+  
    </>
     )
    }

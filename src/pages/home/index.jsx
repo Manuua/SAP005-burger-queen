@@ -8,6 +8,7 @@ import { ErrorMessage, Formik, Form, Field } from 'formik'
 import * as yup from 'yup'
 import axios from 'axios'
 import { history } from '../../history'
+//import {PrivateRoute} from '../../componentes/Routes/private'
 
 
 export function Home(){
@@ -15,12 +16,13 @@ export function Home(){
     //const [value, setValue] = useState("");  
   
     const handleSubmit = values => {
+        
         axios.post('http://localhost:8080/v1/api/auth', values)
             .then(resp => {
                 const { data } = resp
                 if (data) {
                     localStorage.setItem('app-token', data)
-                    history.push('/Menu')
+                    history.push('/menu')
                 }
             })
     }
@@ -91,7 +93,9 @@ export function Home(){
 
      <div class="underline"></div>
     </div>
-     <input type="submit" /> 
+     <input type="submit" 
+    
+      /> 
      
     </Form>
     </Formik>

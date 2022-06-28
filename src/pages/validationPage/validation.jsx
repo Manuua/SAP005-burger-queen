@@ -4,8 +4,8 @@ import '../../styles/global.css';
 import logo from "../../imagens/logo.png";
 import { ErrorMessage, Formik, Form, Field } from 'formik'
 
-// import { ErrorMessage, Formik, Form, Field } from 'formik'
-// import * as yup from 'yup'
+
+
 // import axios from 'axios'
 // import { history } from '../../history'
 
@@ -19,8 +19,9 @@ import axios from 'axios'
         axios.post('http://localhost:8080/v1/api/user', values)
             .then(resp => {
                 const { data } = resp
+                console.log(data)
                 if (data) {
-                    history.push('/login')
+                    history.push('/menu')
                 }
             })
     }
