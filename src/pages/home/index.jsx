@@ -1,15 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react';
 import'./styles.css';
 import '../../styles/global.css'
 import logo from "../../imagens/logo.png";
-import { ErrorMessage, Formik, Form, Field } from 'formik'
-import * as yup from 'yup'
-import axios from 'axios'
+import { ErrorMessage, Formik, Form, Field } from 'formik';
+import * as yup from 'yup';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+//import { useCookies } from 'react-cookie';
 //import {PrivateRoute} from '../../componentes/Routes/private'
 
 
 export function Home(){
+    // const [name, setName] = useState('');
+    // const [pwd, setPwd] = useState('');
+    // const [cookies, setCookie] = useCookies(['user']);
+
+    // const handle = () => {
+    //     setCookie('Name', name, { path: '/' });
+    //     setCookie('Password', pwd, { path: '/' });
+    //  };
+
 // validation API 
     const handleSubmit = values => {
         
@@ -35,6 +45,7 @@ let navigate = useNavigate()
     }
 
     return (
+        <> 
 <div className='containerPrincipal'>
 <img className="logo" src={logo} alt="logo"/>
 
@@ -46,14 +57,17 @@ let navigate = useNavigate()
      initialValues={{}}
      onSubmit={handleSubmit}
      validationSchema= {validations}
+
   >
  <Form >
  
     <div class="input-field"/>
         <Field
+        //  value={name}
           name="email" 
           id="email" 
           placeholder="Enter Your email" 
+        //  onChange={(e) => setName(e.target.value)}
           />
      <ErrorMessage
         component="span"
@@ -65,10 +79,12 @@ let navigate = useNavigate()
             
     <div class="input-field">
         <Field  
+        //value={pwd}
         type="password"
         name="password" 
         id="password"  
         placeholder="Enter Your Password"
+       // onChange={(e) => setPwd(e.target.value)}
         />
 
        <ErrorMessage
@@ -90,6 +106,6 @@ let navigate = useNavigate()
     </div>     
         
     </div>
-
+    </>
     )
   }

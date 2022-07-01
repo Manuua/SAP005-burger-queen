@@ -1,13 +1,13 @@
 import './style.css';
 import '../../styles/global.css'
 
-
 export function CardCardapio(props){
   
  return (
  <>
 
 <div className='cardCardapio' >
+    
          <strong > {props.name}</strong>
          <strong > preço : R$ {props.price} </strong>
 

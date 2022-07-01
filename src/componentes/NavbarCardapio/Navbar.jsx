@@ -14,11 +14,13 @@ export function Navbar() {
   function handleExit() {
     navigate("/")
   }
-
+  function  handleWelcome() {
+    navigate("/welcome")
+  }
     return (
   <nav className='nav-cardapio'>
      <ul className="list">
-      <li className="items" onClick={handleMenu}> Inicio </li>
+      <li className="items" onClick={handleWelcome}> Inicio </li>
       <li className="items" onClick={handleCardapio} >Cardapio </li>
       <li className="items" onClick={handleMenu}> Pedidos </li>
       <li className="items" onClick={handleExit}>Sair</li>

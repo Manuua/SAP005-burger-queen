@@ -16,6 +16,9 @@ export function NavbarMenu() {
   function handleExit() {
     navigate("/")
   }
+  function  handleWelcome() {
+    navigate("/welcome")
+  }
 
     return (
         <div className='container-menu'> 
@@ -27,7 +30,7 @@ export function NavbarMenu() {
             <nav className='menu-nav'>
             <ul>
            
-                <li onClick={handleMenu}>Início </li>
+                <li onClick={handleWelcome}>Início </li>
                 <li onClick={handleCardapio}> Cardápio </li>
                 <li onClick={handleMenu}>Pedidos </li>
                 <li onClick={handleExit} > SAIR </li>

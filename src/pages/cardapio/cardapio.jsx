@@ -4,11 +4,10 @@ import "../../styles/global.css";
 import "../../componentes/dadosCardapio/dados";
 import { CardCardapio } from "../../componentes/cardCardapio/cardCardapio";
 import titulocardapio from "../../imagens/titulocardapio.png";
-import { render } from "react-dom";
 import dados from "../../componentes/dadosCardapio/dados";
 import { Navbar } from "../../componentes/NavbarCardapio/Navbar";
-import { BrowserRouter as Router } from "react-router-dom";
-//import { localStorage } from "../../componentes/localStorage/localStorage";
+
+
 
 export function Cardapio(props) {
   const [cart, setCart] = useState({});
@@ -25,10 +24,6 @@ export function Cardapio(props) {
   useEffect(() => {
     setTotal(Object.keys(cart).reduce((total, name) => total + (cart[name].price * cart[name].count), 0))
 
-
-    console.log({total});
-    //  console.log("carrinho mudou")
-    //  console.log(cart)
   }, [cart]);
 
 
